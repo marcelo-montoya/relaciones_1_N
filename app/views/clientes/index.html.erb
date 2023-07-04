@@ -1,14 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Clientes</h1>
+<h1 class="my-5">Clientes</h1>
+  
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">N° Películas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <th scope="row"> <%= cliente.id %> </th>
+        <td> <%= cliente.nombre %> </td>
+        <td> <%= cliente.edad %> </td>
+        
+          <% if cliente.peliculas.present? %>
+            <td> <%= cliente.peliculas.count %> </td>
+          <% else %>
+            <td>No tiene películas</td>
+          <% end %>
 
-<div id="clientes">
-  <% @clientes.each do |cliente| %>
-    <%= render cliente %>
-    <p>
-      <%= link_to "Show this cliente", cliente %>
-    </p>
-  <% end %>
+        <td><%= link_to "Mostrar cliente", cliente, class:"btn btn-outline-secondary btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="button">
+  <%= link_to "Crear cliente", new_cliente_path, class:"btn btn-outline-secondary" %>
 </div>
-
-<%= link_to "New cliente", new_cliente_path %>

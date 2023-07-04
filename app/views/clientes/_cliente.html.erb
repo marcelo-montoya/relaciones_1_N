@@ -1,12 +1,26 @@
 <div id="<%= dom_id cliente %>">
-  <p>
-    <strong>Nombre:</strong>
-    <%= cliente.nombre %>
-  </p>
 
-  <p>
-    <strong>Edad:</strong>
-    <%= cliente.edad %>
-  </p>
-
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Nombre película</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cliente.peliculas.each do |pelicula| %>
+      <tr>
+        <th scope="row"> <%= cliente.id %> </th>
+        <td> <%= cliente.nombre %> </td>
+        <td> <%= cliente.edad %> </td>
+        <td> <%= pelicula.nombre %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+
+
+

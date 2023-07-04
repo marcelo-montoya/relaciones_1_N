@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nombre, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :nombre, style: "form-label" %>
     <%= form.text_field :nombre %>
   </div>
 
-  <div>
-    <%= form.label :cliente_id, style: "display: block" %>
-    <%= form.text_field :cliente_id %>
+  <div class="mb-3">
+    <%= form.label :cliente_id, style: "form-label" %>
+    <%= form.collection_select :cliente_id, @clientes, :id, :nombre %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Actualizar película", class:"btn btn-outline-secondary" %>
   </div>
 <% end %>

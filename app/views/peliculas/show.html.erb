@@ -2,9 +2,11 @@
 
 <%= render @pelicula %>
 
-<div>
-  <%= link_to "Edit this pelicula", edit_pelicula_path(@pelicula) %> |
-  <%= link_to "Back to peliculas", peliculas_path %>
 
-  <%= button_to "Destroy this pelicula", @pelicula, method: :delete %>
+<div class="button">
+  <%= link_to "Editar película", edit_pelicula_path(@pelicula), class:"btn btn-outline-secondary" %> |
+  <%= link_to "Volver a películas", peliculas_path, class:"btn btn-outline-secondary" %>
+
+  <%= button_to "Destruir película", @pelicula, method: :delete, class:"btn btn-outline-secondary" %>
 </div>
+

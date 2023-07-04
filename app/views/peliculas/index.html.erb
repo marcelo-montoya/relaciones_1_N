@@ -1,14 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Peliculas</h1>
+<h1 class="my-5">Películas</h1>
+  
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Nombre cliente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @peliculas.each do |pelicula| %>
+      <tr>
+        <th scope="row"> <%= pelicula.id %> </th>
+        <td> <%= pelicula.nombre %> </td>
+        <td><%= link_to "Mostrar película", pelicula, class:"btn btn-outline-secondary btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<div id="peliculas">
-  <% @peliculas.each do |pelicula| %>
-    <%= render pelicula %>
-    <p>
-      <%= link_to "Show this pelicula", pelicula %>
-    </p>
-  <% end %>
+<div class="button">
+
+  <%= link_to "Crear película", new_pelicula_path, class:"btn btn-outline-secondary" %>
 </div>
-
-<%= link_to "New pelicula", new_pelicula_path %>

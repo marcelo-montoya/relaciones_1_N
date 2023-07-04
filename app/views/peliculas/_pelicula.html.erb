@@ -1,12 +1,22 @@
 <div id="<%= dom_id pelicula %>">
-  <p>
-    <strong>Nombre:</strong>
-    <%= pelicula.nombre %>
-  </p>
 
-  <p>
-    <strong>Cliente:</strong>
-    <%= pelicula.cliente_id %>
-  </p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cliente ID</th>
+        <th scope="col">Nombre cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"> <%= pelicula.nombre %></th>
+        <td> <%= pelicula.cliente_id %> </td>
+        <td> <%= pelicula.cliente.nombre %> </td>
+      </tr>
+    </tbody>
+  </table>
+
 
 </div>

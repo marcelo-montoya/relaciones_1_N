@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nombre, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :nombre, style: "form-label" %>
     <%= form.text_field :nombre %>
   </div>
 
-  <div>
-    <%= form.label :edad, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :edad, style: "form-label" %>
     <%= form.text_field :edad %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Actualizar cliente", class:"btn btn-outline-secondary" %>
   </div>
 <% end %>

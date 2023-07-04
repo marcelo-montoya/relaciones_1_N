@@ -1,5 +1,6 @@
 class PeliculasController < ApplicationController
   before_action :set_pelicula, only: %i[ show edit update destroy ]
+  before_action :collection_peliculas, only: %i[ show new edit update ]
 
   # GET /peliculas or /peliculas.json
   def index
@@ -66,5 +67,11 @@ class PeliculasController < ApplicationController
     # Only allow a list of trusted parameters through.
     def pelicula_params
       params.require(:pelicula).permit(:nombre, :cliente_id)
+    end
+
+    def collection_peliculas
+
+      @clientes = Cliente.select(:id, :nombre).order(nombre: :asc)
+      
     end
 end
